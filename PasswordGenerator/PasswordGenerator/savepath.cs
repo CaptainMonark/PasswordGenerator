@@ -11,22 +11,26 @@ namespace PasswordGenerator
     {
         private string path;
 
+        //Constructor with 1 argument
         public savepath(string path)
         {
             this.path = path;
         }
-
+        
+        //Constructor without argument
         public savepath()
         {
             this.path = ("");
         }
 
+        //Getter and setter of the path
         public string Path
         {
             get { return this.path; }
             set { this.path = value; }
         }
-
+        
+        //Create a file where the passwords will be written
         public void enregistrer(string chaine)
         {
             try

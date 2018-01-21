@@ -12,17 +12,21 @@ namespace PasswordGenerator
         int maxL;
         private Random rnd = new Random();
 
+        //Constructor with 2 parameters
         public generator(int min, int max)
         {
             this.minL = min;
             this.maxL = max;
+
         }
+        //Constructor with 1 parameters
         public generator(int min)
         {
             this.minL = min;
             this.maxL = nbMax();
         }
 
+        //Create a string which contain the password
         public string chaine()
         {
             int lg = longueur();
@@ -34,14 +38,19 @@ namespace PasswordGenerator
             return chaine;
         }
 
+        //Generate a random length
         public int longueur()
         {
             return rnd.Next(minL, maxL + 1);
         }
+
+        //Generate a random max length
         public int nbMax()
         {
             return rnd.Next(minL+1, minL+11);
         }
+
+        //Generate a random ASCII character
         public char Alea()
         {
             int nbAlea = 0;

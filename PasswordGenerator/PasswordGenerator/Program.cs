@@ -14,7 +14,9 @@ namespace PasswordGenerator
             int i = 0;
             Console.WriteLine("Choose how many password do you want : (-1 for infinite password)");
             string arg4 = Console.ReadLine();
-            if (args.Length == 0)
+
+            //Case of 0 argument
+            if (args.Length == 0) 
             {
                 Console.WriteLine("Choose password min length :");
                 String arg1 = Console.ReadLine();
@@ -35,6 +37,7 @@ namespace PasswordGenerator
                     i++;
                 }
             }
+            //Case of 1 argument
             else if (args.Length == 1)
             {
                 generator g = new generator(Convert.ToInt16(args[0]));
@@ -47,6 +50,7 @@ namespace PasswordGenerator
                     i++;
                 }
             }
+            //Case of 2 arguments
             else if (args.Length == 2)
             {
                 generator g = new generator(Convert.ToInt16(args[0]), Convert.ToInt16(args[1]));
@@ -59,6 +63,7 @@ namespace PasswordGenerator
                     i++;
                 }
             }
+            //Case of 3 arguments
             else if (args.Length == 3)
             {
                 generator g = new generator(Convert.ToInt16(args[0]), Convert.ToInt16(args[1]));
