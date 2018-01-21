@@ -19,7 +19,7 @@ namespace PasswordGenerator
             this.maxL = max;
 
         }
-        //Constructor with 1 parameters
+        //Constructor with 1 parameter
         public generator(int min)
         {
             this.minL = min;

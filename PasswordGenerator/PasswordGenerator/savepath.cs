@@ -11,13 +11,13 @@ namespace PasswordGenerator
     {
         private string path;
 
-        //Constructor with 1 argument
+        //Constructor with 1 parameter
         public savepath(string path)
         {
             this.path = path;
         }
         
-        //Constructor without argument
+        //Constructor without parameter
         public savepath()
         {
             this.path = ("");
@@ -31,6 +31,7 @@ namespace PasswordGenerator
         }
         
         //Create a file where the passwords will be written
+        //If the file already exist, the passwords will be written at the beginning of it
         public void enregistrer(string chaine)
         {
             try
