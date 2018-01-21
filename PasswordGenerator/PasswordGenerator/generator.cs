@@ -40,7 +40,7 @@ namespace PasswordGenerator
         }
         public int nbMax()
         {
-            return rnd.Next(minL, 24);
+            return rnd.Next(minL+1, minL+11);
         }
         public char Alea()
         {
