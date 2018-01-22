@@ -8,8 +8,8 @@ namespace PasswordGenerator
 {
     class generator
     {
-        int minL;
-        int maxL;
+        private int minL;
+        private int maxL;
         private Random rnd = new Random();
 
         //Constructor with 2 parameters
