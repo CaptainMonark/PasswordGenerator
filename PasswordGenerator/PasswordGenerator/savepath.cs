@@ -37,7 +37,7 @@ namespace PasswordGenerator
         {
             try
             {
-                StreamWriter sw = new StreamWriter(path + "/pass.txt", true, System.Text.Encoding.ASCII);
+                StreamWriter sw = new StreamWriter(path + "pass.txt", true, System.Text.Encoding.ASCII);
                 sw.WriteLine(chaine);
                 sw.Close();
             }
