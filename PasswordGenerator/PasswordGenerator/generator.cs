@@ -8,19 +8,19 @@ namespace PasswordGenerator
 {
     class generator
     {
-        private int minL;
-        private int maxL;
+        private Int64 minL;
+        private Int64 maxL;
         private Random rnd = new Random();
 
         //Constructor with 2 parameters
-        public generator(int min, int max)
+        public generator(Int64 min, Int64 max)
         {
             this.minL = min;
             this.maxL = max;
 
         }
         //Constructor with 1 parameter
-        public generator(int min)
+        public generator(Int64 min)
         {
             this.minL = min;
             this.maxL = nbMax();
@@ -29,9 +29,9 @@ namespace PasswordGenerator
         //Create a string which contain the password
         public string chaine()
         {
-            int lg = longueur();
+            Int64 lg = longueur();
             string chaine = "";
-            for (int i = 0; i <= lg - 1; i++)
+            for (Int64 i = 0; i <= lg - 1; i++)
             {
                 chaine += Alea();
             }
@@ -39,32 +39,22 @@ namespace PasswordGenerator
         }
 
         //Generate a random length
-        public int longueur()
+        public Int64 longueur()
         {
-            return rnd.Next(minL, maxL + 1);
+            return (long)((rnd.NextDouble() * (maxL + 1 - minL)) + minL);
         }
 
         //Generate a random max length
-        public int nbMax()
+        public Int64 nbMax()
         {
-            return rnd.Next(minL+1, minL+11);
+            return (long)((rnd.NextDouble()*11+minL));
         }
 
         //Generate a random ASCII character
         public char Alea()
         {
             int nbAlea = 0;
-            nbAlea = rnd.Next(0, 62);
-            nbAlea = nbAlea + 48;
-            if (nbAlea >= 58)
-            {
-                nbAlea = nbAlea + 7;
-                if (nbAlea >= 91)
-                {
-                    nbAlea = nbAlea + 6;
-                }
-
-            }
+            nbAlea = rnd.Next(33, 127);
             char ascii;
             return ascii = Convert.ToChar(nbAlea);
         }

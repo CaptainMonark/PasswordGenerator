@@ -7,6 +7,7 @@ using System.IO;
 
 namespace PasswordGenerator
 {
+    //Class that define the path where the file would be created or where the passwords would be saved
     class savepath
     {
         private string path;
@@ -20,7 +21,7 @@ namespace PasswordGenerator
         //Constructor without parameter
         public savepath()
         {
-            this.path = ("");
+            this.path = string.Empty;
         }
 
         //Getter and setter of the path
@@ -36,13 +37,15 @@ namespace PasswordGenerator
         {
             try
             {
-                StreamWriter sw = new StreamWriter(path + "pass.txt", true, System.Text.Encoding.ASCII);
+                StreamWriter sw = new StreamWriter(path + "/pass.txt", true, System.Text.Encoding.ASCII);
                 sw.WriteLine(chaine);
                 sw.Close();
             }
-            catch (Exception e)
+            //if it don't work, the console show an error
+            catch (Exception e) 
             {
                 Console.WriteLine("Exception: " + e.Message);
+                Environment.Exit(0);
             }
 
         }
