@@ -49,7 +49,7 @@ namespace PasswordGenerator
                         b = false;
                     }
                 }
-                Console.WriteLine("Choose the path :");
+                Console.WriteLine("Choose the path : ");
                 String arg3 = Console.ReadLine();
 
                 //We create two object on which return a string which is the password and one which is the path where the file is
@@ -70,10 +70,20 @@ namespace PasswordGenerator
             //Case of 2 arguments
             else if (args.Length == 2)
             {
-                generator g = new generator(Convert.ToInt64(args[0]), Convert.ToInt64(args[1]));
-                savepath en = new savepath();
-                storage st = new storage();
-                st.store(arg4, en, g);
+                //Check if max > min
+                if(Convert.ToInt64(args[0]) > Convert.ToInt64(args[1]))
+                {
+                    Console.WriteLine("Wrong argument");
+                    Console.Read();
+                }
+                else
+                {
+                    generator g = new generator(Convert.ToInt64(args[0]), Convert.ToInt64(args[1]));
+                    savepath en = new savepath();
+                    storage st = new storage();
+                    st.store(arg4, en, g);
+                }
+                
             }
             //Case of 3 arguments
             else if (args.Length == 3)
