@@ -12,7 +12,7 @@ namespace PasswordGenerator
         {
 
             Boolean b = true;
-            Console.WriteLine("Choose how many password do you want : (-1 for infinite password)");
+            Console.WriteLine("Choose how many password do you want : (-1 for infinite password, escape to exit)");
             string arg4 = Console.ReadLine();
 
             //Case of 0 argument
@@ -20,9 +20,10 @@ namespace PasswordGenerator
             {
                 Console.WriteLine("Choose password min length :");
                 String arg1 = Console.ReadLine();
+                //loop until condition is completed
                 while (b)
                 {
-                    //if the min lenght is negative then we ask for a positive number
+                    //if the min length is negative then we ask for a positive number
                     if(Convert.ToInt64(arg1) <= 0)
                     {
                         Console.WriteLine("Choose a positive number :");
@@ -36,10 +37,11 @@ namespace PasswordGenerator
                 b = true;
                 Console.WriteLine("Choose password max length :");
                 String arg2 = Console.ReadLine();
+                //loop until condition is completed
                 while (b)
                 {
-                    //if the max lenght is inferior then we ask for a superior number
-                    if (Convert.ToInt64(arg2) <= Convert.ToInt64(arg1))
+                    //if the max length is inferior then we ask for a superior number
+                    if (Convert.ToInt64(arg2) < Convert.ToInt64(arg1))
                     {
                         Console.WriteLine("Choose a number superior than the minimum:");
                         arg2 = Console.ReadLine();
